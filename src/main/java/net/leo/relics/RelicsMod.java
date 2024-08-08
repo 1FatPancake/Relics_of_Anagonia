@@ -1,6 +1,7 @@
 package net.leo.relics;
 
 import com.mojang.logging.LogUtils;
+import net.leo.relics.entity.RelicsEntities;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.BuildCreativeModeTabContentsEvent;
@@ -24,6 +25,8 @@ public class RelicsMod
     public RelicsMod()
     {
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
+
+        RelicsEntities.register(modEventBus);
 
         modEventBus.addListener(this::commonSetup);
 
